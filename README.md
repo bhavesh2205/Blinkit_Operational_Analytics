@@ -33,9 +33,7 @@ This project consists of **6 tables** that store information about orders, custo
 
 7. **Create a list of cities with high percentages of single-order customers.** 
 
-8. **Create a list of cities with high percentages of single-order customers.** 
-
-9. **Analyze the relationship between the distance covered by delivery agents and the average delivery time. Use SQL to derive correlation metrics.** 
+8. **Analyze the relationship between the distance covered by delivery agents and the average delivery time. Use SQL to derive correlation metrics.** 
 
 
 
