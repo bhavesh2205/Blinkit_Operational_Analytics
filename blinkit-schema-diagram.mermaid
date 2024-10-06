@@ -1,0 +1,53 @@
+erDiagram
+    CUSTOMERS ||--o{ ORDERS : places
+    STORES ||--o{ ORDERS : fulfills
+    ORDERS ||--|{ ORDER_DETAILS : contains
+    PRODUCTS ||--o{ ORDER_DETAILS : included_in
+    ORDERS ||--|| DELIVERY : has
+
+    CUSTOMERS {
+        int CustomerID PK
+        varchar Name
+        varchar City
+        date SignUpDate
+        int TotalOrders
+        date LastOrderDate
+    }
+
+    ORDERS {
+        int OrderID PK
+        int CustomerID FK
+        int StoreID FK
+        datetime OrderDate
+        int DeliveryTime
+        decimal TotalAmount
+        varchar Status
+    }
+
+    STORES {
+        int StoreID PK
+        varchar City
+        varchar Area
+        varchar Category
+    }
+
+    PRODUCTS {
+        int ProductID PK
+        varchar ProductName
+        varchar Category
+        decimal Price
+    }
+
+    ORDER_DETAILS {
+        int OrderID PK,FK
+        int ProductID PK,FK
+        int Quantity
+    }
+
+    DELIVERY {
+        int OrderID PK,FK
+        int DeliveryPersonID
+        datetime DeliveryStartTime
+        datetime DeliveryEndTime
+        decimal DistanceCovered
+    }
